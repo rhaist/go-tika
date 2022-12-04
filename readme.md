@@ -18,13 +18,13 @@ To get the binary, run:
 go get -u github.com/rhaist/go-tika/cmd/tika
 ```
 
-To download the Apache Tika 1.14 Server, check the MD5 sum, start the server in the background, and parse a file, run:
+To download the Apache Tika 2.6.0 Server, check the MD5 sum, start the server in the background, and parse a file, run:
 
 ```bash
-$GOPATH/bin/tika -filename /path/to/file/to/parse -download_version 1.14 parse
+$GOPATH/bin/tika -filename /path/to/file/to/parse -download_version 2.6.0 parse
 ```
 
-This will store tika-server-1.14.jar in your current working directory. If you want to control the output location of the JAR, add a `-server_jar /path/to/save/tika-server.jar` argument.
+This will store tika-server-2.6.0.jar in your current working directory. If you want to control the output location of the JAR, add a `-server_jar /path/to/save/tika-server.jar` argument.
 
 If you already have a downloaded Apache Tika Server JAR, you can specify it with the `-server_jar` flag and it will not be re-downloaded.
 
