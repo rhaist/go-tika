@@ -62,7 +62,7 @@ func TestStart(t *testing.T) {
 		t.Skip("cannot find current test executable")
 	}
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
-		fmt.Fprint(w, "1.14")
+		fmt.Fprint(w, "2.6.0")
 	}))
 	defer ts.Close()
 	tsURL, err := url.Parse(ts.URL)
@@ -89,7 +89,7 @@ func bouncyServer(bounce int) *httptest.Server {
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
-		fmt.Fprint(w, "1.14")
+		fmt.Fprint(w, "2.6.0")
 	}))
 
 }
@@ -239,7 +239,7 @@ func TestAddJavaProps(t *testing.T) {
 		t.Skip("cannot find current test executable")
 	}
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
-		fmt.Fprint(w, "1.14")
+		fmt.Fprint(w, "2.6.0")
 	}))
 	defer ts.Close()
 	tsURL, err := url.Parse(ts.URL)

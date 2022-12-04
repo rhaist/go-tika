@@ -42,9 +42,9 @@ again.
      exercised by your tests.
 
   1. Please run:
-     * `go generate github.com/google/go-tika/...`
-     * `go test github.com/google/go-tika/...`
-     * `go vet github.com/google/go-tika/...`
+     * `go generate github.com/rhaist/go-tika/...`
+     * `go test github.com/rhaist/go-tika/...`
+     * `go vet github.com/rhaist/go-tika/...`
 
   1. Do your best to have [well-formed commit messages][] for each change.
      This provides consistency throughout the project, and ensures that commit

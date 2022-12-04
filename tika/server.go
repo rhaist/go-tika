@@ -241,18 +241,14 @@ type Version string
 
 // Supported versions of Tika Server.
 const (
-	Version119 Version = "1.19"
-	Version120 Version = "1.20"
-	Version121 Version = "1.21"
+	Version260 Version = "2.6.0"
 )
 
 // Versions is a list of supported versions of Apache Tika.
-var Versions = []Version{Version119, Version120, Version121}
+var Versions = []Version{Version260}
 
 var sha512s = map[Version]string{
-	Version119: "a9e2b6186cdb9872466d3eda791d0e1cd059da923035940d4b51bb1adc4a356670fde46995725844a2dd500a09f3a5631d0ca5fbc2d61a59e8e0bd95c9dfa6c2",
-	Version120: "a7ef35317aba76be8606f9250893efece8b93384e835a18399da18a095b19a15af591e3997828d4ebd3023f21d5efad62a91918610c44e692cfd9bed01d68382",
-	Version121: "e705c836b2110530c8d363d05da27f65c4f6c9051b660cefdae0e5113c365dbabed2aa1e4171c8e52dbe4cbaa085e3d8a01a5a731e344942c519b85836da646c",
+	Version260: "df72b1179c39c1a70daaf19a43acc1a2c7e6ae7aeae2bf9aa4a1a447ac460324d50ba1a98da81d4a996cea0a86b68cb168ae134b4b1561dea278a245b02d591a",
 }
 
 // DownloadServer downloads and validates the given server version,
@@ -277,7 +273,7 @@ func DownloadServer(ctx context.Context, v Version, path string) error {
 	}
 	defer out.Close()
 
-	url := fmt.Sprintf("http://search.maven.org/remotecontent?filepath=org/apache/tika/tika-server/%s/tika-server-%s.jar", v, v)
+	url := fmt.Sprintf("https://dlcdn.apache.org/tika/%s/tika-server-standard-%s.jar", v, v)
 	resp, err := ctxhttp.Get(ctx, nil, url)
 	if err != nil {
 		return fmt.Errorf("unable to download %q: %v", url, err)
